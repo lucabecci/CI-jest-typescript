@@ -1,4 +1,4 @@
-import { add } from "../src/someFunc";
+import { add } from "../../src/helpers/calculate";
 describe("test in add function", () => {
     test("should return 200 for add(100+100)", () => {
         expect(add(100, 100)).toBe(200);
