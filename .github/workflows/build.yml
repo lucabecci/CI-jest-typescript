@@ -1,3 +1,4 @@
+name: Build
 #Build action
 on:
     push:
