@@ -18,7 +18,8 @@
     "start": "node dist/index",
     "clean": "rm -rf ./dist/* ",
     "dev": "ts-node-dev src/index.ts",
-    "test": "jest"
+    "test": "jest",
+    "pretty": "prettier --write src/* && prettier --write test/*"
   },
   "dependencies": {}
 }
