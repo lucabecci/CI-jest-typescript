@@ -1,13 +1,24 @@
 import express, { Application, Request, Response } from "express";
+import swaggerUI from "swagger-ui-express";
 import { add } from "./helpers/calculate";
+import { swaggerDocument } from "./swagger";
 class Server {
     public _app: Application;
 
     constructor() {
         this._app = express();
+        this.initConfig();
+        this.initRoutes();
+    }
+
+    private initConfig() {
         this._app.use(express.json());
         this._app.use(express.urlencoded({ extended: false }));
-        this.initRoutes();
+        this._app.use(
+            "/api-docs",
+            swaggerUI.serve,
+            swaggerUI.setup(swaggerDocument)
+        );
     }
 
     private initRoutes() {
