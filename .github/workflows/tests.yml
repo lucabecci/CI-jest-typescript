@@ -19,13 +19,13 @@ jobs:
 
         steps:
             - name: Install Node
-                uses: actions/setup-node@v2
-                with:
-                    node-version: ${{ matrix.node-version }}
+                - uses: actions/setup-node@v2
+                  with:
+                      node-version: ${{ matrix.node-version }}
             
             - name: Checkout Code
-                uses: actions/checkout@v2
+                - uses: actions/checkout@v2
             
             - name: Run Tests
-                run: yarn install
-                run: yarn test
+                - run: yarn install
+                - run: yarn test
